@@ -58,8 +58,9 @@ kaggle competitions download -c track3-india-ai-impact-gen-ai-hackathon -p data
 # Extract the files
 unzip data/track3-india-ai-impact-gen-ai-hackathon.zip -d data/
 ```
+4. Follow commands.txt to import agents
 
-4. Run the application:
+5. Run the application:
 ```bash
 python app.py
 ```
