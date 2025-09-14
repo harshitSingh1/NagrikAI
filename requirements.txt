@@ -1,0 +1,8 @@
+pandas
+flask
+python-dotenv
+requests
+ibm-watsonx-orchestrate
+faker
+numpy
+gunicorn

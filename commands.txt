@@ -1,0 +1,57 @@
+//Create API Key and Service Instance URL
+//Open project folder in VS Code
+python -m venv .venv
+
+Get-ExecutionPolicy // it should be set to RemoteSigned, if not then run:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+.\.venv\Scripts\activate.ps1
+pip install ibm-watsonx-orchestrate
+orchestrate --version //To check if its installed properly
+orchestrate env add -n <environment-name> -u https://my-service-instance-url --type mcsp --activate
+orchestrate env activate <environment-name>
+orchestrate env list //check active environment
+
+Install Rancher: https://github.com/rancher-sandbox/rancher-desktop/releases
+Install Docker AMD64: https://www.docker.com/products/docker-desktop/
+
+Create .env in root folder with the following contents:
+WO_DEVELOPER_EDITION_SOURCE=orchestrate
+WO_INSTANCE=<your-watsonx-orchestrate-instance-url>
+WO_API_KEY=<your-watsonx-api-key>
+
+orchestrate server start -e .env
+
+//Create hello-world folder and add files: greeter.yaml, greetings.py
+cd hello-world
+orchestrate tools import -k python -f greetings.py
+orchestrate agents import -f greeter.yaml
+
+//checkout the agents here: https://ap-south-1.dl.watson-orchestrate.ibm.com/build/manage
+
+//Now open your Kaggle Account, Go to settings, create API key which will download kaggle.json file.
+
+mkdir ~/.kaggle //will create folder in your home directory (i.e C:\Users\91639)
+// place the kaggle.json file in in kaggle folder
+
+# Install Kaggle CLI (inside venv so it’s available to your agents later)
+.venv\Scripts\activate.ps1
+pip install kaggle pandas numpy scikit-learn
+deactivate
+
+setx KAGGLE_USERNAME "<your_kaggle_username>"
+setx KAGGLE_KEY "<your_kaggle_key>"
+
+//Set permissions
+.venv\Scripts\activate.ps1
+icacls C:\Users\91639\.kaggle\kaggle.json /inheritance:r
+icacls C:\Users\91639\.kaggle\kaggle.json /grant:r "%username%:R"
+
+kaggle competitions download -c track3-india-ai-impact-gen-ai-hackathon -p data
+Expand-Archive data\track3-india-ai-impact-gen-ai-hackathon.zip -DestinationPath data
+
+//create form_agent, grievance_agent, tracking_agent, eligibility
+
+//Then import all agents one by one
+orchestrate tools import -k python -f eligibility.py
+orchestrate agents import -f eligibility.yaml

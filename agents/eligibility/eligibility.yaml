@@ -1,0 +1,10 @@
+spec_version: v1
+kind: native
+name: eligibility_agent
+description: An agent that checks eligibility for schemes based on household data.
+instructions: Always run the tool "eligibility_checker" when the user provides a building ID.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+collaborators: []
+tools:
+- eligibility_checker

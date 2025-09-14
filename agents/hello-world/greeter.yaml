@@ -1,0 +1,10 @@
+spec_version: v1
+kind: native
+name: greeter
+description: A simple greeting agent
+instructions: Always run the tool "Greeting" when the user types Greeting.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+collaborators: []
+tools:
+  - greeting

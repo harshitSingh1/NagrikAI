@@ -1,0 +1,10 @@
+spec_version: v1
+kind: native
+name: knowledge_agent
+description: Provides contextual answers to citizen queries using dataset.
+instructions: Always run "answer_query" when user asks a general text-based question.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+collaborators: []
+tools:
+- answer_query

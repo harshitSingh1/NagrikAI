@@ -1,0 +1,10 @@
+spec_version: v1
+kind: native
+name: grievance_agent
+description: Classifies and routes citizen grievances to the correct authority.
+instructions: Always run the tool "file_grievance" when user submits a complaint.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+collaborators: []
+tools:
+- file_grievance

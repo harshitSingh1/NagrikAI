@@ -1,0 +1,10 @@
+spec_version: v1
+kind: native
+name: tracking_agent
+description: Tracks application/grievance status and sends updates.
+instructions: Always run the tool "track_status" when user wants to check status.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: default
+collaborators: []
+tools:
+- track_status

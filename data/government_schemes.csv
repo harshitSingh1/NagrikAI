@@ -1,0 +1,8 @@
+scheme_id,scheme_name,department,level,min_age,max_age,min_income,max_income,rural_only,categories,states,description
+PMKISAN,Pradhan Mantri Kisan Samman Nidhi,Agriculture,Central,18,100,0,150000,True,['Farmer'],All,Financial assistance to small and marginal farmers
+PMAY,Pradhan Mantri Awas Yojana,Housing,Central,21,70,0,300000,False,['All'],All,Housing for all by 2022
+UJJWALA,Pradhan Mantri Ujjwala Yojana,Petroleum,Central,18,100,0,150000,False,"['Women', 'BPL']",All,Free LPG connections to women from BPL households
+PMJAY,Ayushman Bharat Pradhan Mantri Jan Arogya Yojana,Health,Central,0,100,0,500000,False,['BPL'],All,Health insurance for economically vulnerable families
+MH_FARM,Maharashtra Farmer Welfare Scheme,Agriculture,State,21,65,0,200000,True,['Farmer'],Maharashtra,Financial aid to farmers in Maharashtra
+UP_SCHOLAR,Uttar Pradesh Scholarship Scheme,Education,State,15,25,0,250000,False,"['Student', 'SC/ST']",Uttar Pradesh,Scholarship for SC/ST students in UP
+KL_OLDAGE,Kerala Old Age Pension,Social Welfare,State,60,100,0,100000,False,['Senior Citizen'],Kerala,Monthly pension for senior citizens in Kerala
